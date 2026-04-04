@@ -5,10 +5,9 @@
         <field name="model">res.users</field>
         <field name="inherit_id" ref="base.view_users_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='access_rights']/group[5]/group[5]/field[@name='in_group_3']" position="after">
+            <xpath expr="/form//field[@name='role']" position="after">
                 <field name="any_userlogin"/>
             </xpath>
         </field>
     </record>
-
 </odoo>
