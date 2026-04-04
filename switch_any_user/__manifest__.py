@@ -6,8 +6,6 @@
     'license': 'OPL-1',
     'summary': 'Systray user-switcher — icon only visible when current user has permission',
     'author': 'Mausam Gurung',
-    'currency': 'USD',
-    'price': '19.99',
     'depends': ['base', 'web', 'mail'],
     'data': [
         'views/view.xml',
