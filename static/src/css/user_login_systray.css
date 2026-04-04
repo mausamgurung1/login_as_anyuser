@@ -1,0 +1,7 @@
+.o-user-login-menu {
+    min-width: 240px;
+}
+
+.o-user-login-item:hover img {
+    opacity: 0.85;
+}

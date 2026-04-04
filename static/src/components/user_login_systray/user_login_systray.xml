@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="login_as_anyuser.UserLoginSystray">
+        <t t-if="!isSmall">
+            <Dropdown
+                beforeOpen.bind="() => {}"
+                position="'bottom-end'"
+                menuClass="'o-user-login-menu shadow-lg border rounded-3 py-0 overflow-hidden'"
+            >
+
+                <button
+                    class="btn btn-link p-0 px-2 d-flex align-items-center gap-1"
+                    title="Switch User"
+                    aria-label="Switch User"
+                    t-att-disabled="state.busy"
+                >
+                    <t t-if="state.busy">
+                        <i class="fa fa-lg fa-spinner fa-spin text-secondary"/>
+                    </t>
+                    <t t-elif="isSwitched">
+                        <i class="fa fa-lg fa-user-secret" style="color: #e67e22;"/>
+                    </t>
+                    <t t-else="">
+                        <i class="fa fa-lg fa-users text-secondary"/>
+                    </t>
+                </button>
+
+                <t t-set-slot="content">
+                    <t t-if="isSwitched">
+                        <div
+                            class="px-3 py-2 d-flex align-items-center gap-2 border-bottom"
+                            style="background:#fff3e0; cursor:pointer;"
+                            t-on-click="onSwitchBack"
+                        >
+                            <i class="fa fa-arrow-left" style="color:#e67e22;"/>
+                            <div class="d-flex flex-column">
+                                <span class="fw-semibold small" style="color:#e67e22;">
+                                    Switch Back
+                                </span>
+                                <span class="text-muted" style="font-size:11px;">
+                                    Return to <t t-esc="originalUserName"/>
+                                </span>
+                            </div>
+                        </div>
+                    </t>
+
+                    <div class="px-3 py-2 fw-semibold text-muted border-bottom bg-light small text-uppercase">
+                        Switch User
+                    </div>
+
+                    <t t-if="!users.length">
+                        <div class="px-3 py-3 text-muted fst-italic small">
+                            No other users available.
+                        </div>
+                    </t>
+
+                    <t t-foreach="users" t-as="user" t-key="user.id">
+                        <DropdownItem
+                            class="'d-flex align-items-center gap-2 px-3 py-2 o-user-login-item'"
+                            onSelected="() => this.onUserClick(user)"
+                        >
+                            <img
+                                t-att-src="user.avatar_url"
+                                t-att-alt="user.name"
+                                class="rounded-circle border"
+                                style="width:32px;height:32px;object-fit:cover;flex-shrink:0;"
+                            />
+                            <div class="d-flex flex-column overflow-hidden">
+                                <span class="fw-semibold text-truncate" t-esc="user.name"/>
+                                <span class="small text-muted text-truncate" t-esc="user.login"/>
+                            </div>
+                        </DropdownItem>
+                    </t>
+
+                </t>
+            </Dropdown>
+        </t>
+    </t>
+
+</templates>
