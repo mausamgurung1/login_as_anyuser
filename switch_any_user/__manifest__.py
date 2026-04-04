@@ -13,9 +13,9 @@
     ],
     'assets': {
         'web.assets_backend': [
-            'login_as_anyuser/static/src/css/user_login_systray.css',
-            'login_as_anyuser/static/src/components/user_login_systray/user_login_systray.xml',
-            'login_as_anyuser/static/src/components/user_login_systray/user_login_systray.js',
+            'switch_any_user/static/src/css/user_login_systray.css',
+            'switch_any_user/static/src/components/user_login_systray/user_login_systray.xml',
+            'switch_any_user/static/src/components/user_login_systray/user_login_systray.js',
         ],
     },
     'installable': True,
