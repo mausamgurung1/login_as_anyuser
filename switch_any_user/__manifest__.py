@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
-{
+{    
     'name': 'Login as Any User',
     'version': '18.0.1.0.0',
+    'category' : "Extra Tools",
     'license': 'OPL-1',
     'summary': 'Systray user-switcher — icon only visible when current user has permission',
     'author': 'Mausam Gurung',
