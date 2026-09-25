@@ -7,7 +7,7 @@
     'summary': 'Systray user switcher icon only visible when current user has permission',
     'author': 'Mausam Gurung',
     'currency': 'USD',
-    'price': '4.99',
+    'price': '0.00',
     'depends': ['base', 'web', 'mail'],
     'data': [
         'views/view.xml',
